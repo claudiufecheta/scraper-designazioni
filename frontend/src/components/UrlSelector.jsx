@@ -1,10 +1,10 @@
 import { useState } from 'react'
 
 const PRESET_URLS = [
-  { label: 'Emilia-Romagna (tutte)', value: 'https://www.aia-figc.it/designazioni/emiliaromagna/' },
-  { label: 'Emilia-Romagna (4-117)', value: 'https://www.aia-figc.it/designazioni/emiliaromagna/default.asp?gare=4-117' },
-  { label: 'CAN C', value: 'https://www.aia-figc.it/designazioni/canc/' },
+  { label: 'OTS - Faenza', value: 'https://www.aia-figc.it/designazioni/emiliaromagna/default.asp?gare=4-117' },
+  { label: 'OTR - Emilia Romagna', value: 'https://www.aia-figc.it/designazioni/emiliaromagna/' },
   { label: 'CAN D', value: 'https://www.aia-figc.it/designazioni/cand/' },
+  { label: 'CAN C', value: 'https://www.aia-figc.it/designazioni/canc/' },
 ]
 
 export default function UrlSelector({ onScrape, isLoading }) {
