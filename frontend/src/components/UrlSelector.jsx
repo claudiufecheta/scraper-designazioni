@@ -9,11 +9,12 @@ const PRESET_URLS = [
 
 export default function UrlSelector({ onScrape, isLoading }) {
   const [url, setUrl] = useState(PRESET_URLS[1].value)
+  const [sezione, setSezione] = useState('Faenza')
 
   function handleSubmit(e) {
     e.preventDefault()
-    if (!url.trim()) return
-    onScrape(url.trim())
+    if (!url.trim() || !sezione.trim()) return
+    onScrape(url.trim(), sezione.trim())
   }
 
   return (
@@ -38,9 +39,22 @@ export default function UrlSelector({ onScrape, isLoading }) {
         ))}
       </div>
 
+      {/* Sezione */}
+      <div className="flex flex-col gap-1">
+        <label className="text-xs font-medium text-gray-500 uppercase tracking-wide">Sezione</label>
+        <input
+          type="text"
+          value={sezione}
+          onChange={(e) => setSezione(e.target.value)}
+          placeholder="es. Faenza"
+          className="w-full sm:w-48 px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+          required
+        />
+      </div>
+
       <button
         type="submit"
-        disabled={isLoading || !url.trim()}
+        disabled={isLoading || !url.trim() || !sezione.trim()}
         className="w-full sm:w-auto px-6 py-2.5 bg-blue-600 hover:bg-blue-700 disabled:bg-blue-300 text-white font-semibold rounded-lg transition-colors"
       >
         {isLoading ? 'Ricerca…' : 'Avvia ricerca'}

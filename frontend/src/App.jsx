@@ -57,7 +57,7 @@ export default function App() {
   const [errorMessage, setErrorMessage] = useState('')
   const [copied, setCopied] = useState(false)
 
-  async function handleScrape(url) {
+  async function handleScrape(url, sezione) {
     setStatus('loading')
     setResults([])
     setErrors([])
@@ -65,7 +65,7 @@ export default function App() {
     setCopied(false)
 
     try {
-      const data = await runScrape(url)
+      const data = await runScrape(url, sezione)
       setResults(data.results || [])
       setErrors(data.errors || [])
       setStatus('success')
