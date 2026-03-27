@@ -87,6 +87,9 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* Overlay loader */}
+      {status === 'loading' && <LoadingSpinner />}
+
       {/* Header */}
       <header className="bg-white border-b border-gray-200 shadow-sm">
         <div className="max-w-5xl mx-auto px-4 py-4 flex items-center gap-3">
@@ -101,9 +104,6 @@ export default function App() {
       <main className="max-w-5xl mx-auto px-4 py-6 space-y-6">
         {/* URL Selector */}
         <UrlSelector onScrape={handleScrape} isLoading={status === 'loading'} />
-
-        {/* Loading */}
-        {status === 'loading' && <LoadingSpinner />}
 
         {/* Error */}
         {status === 'error' && (
