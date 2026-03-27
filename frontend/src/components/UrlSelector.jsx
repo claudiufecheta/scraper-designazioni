@@ -5,10 +5,13 @@ const DEFAULT_REGIONE = REGIONI.find((r) => r.nome === 'Emilia Romagna')
 const DEFAULT_SEZIONE = DEFAULT_REGIONE.sezioni.find((s) => s.nome === 'Faenza')
 
 const TIPI_FISSI = {
-  OTS: null,          // usa sezione.url
-  OTR: 'regione',    // usa regione.url
+  OTS: null,
+  OTR: 'regione',
   'CAN C': 'https://www.aia-figc.it/designazioni/canc/',
   'CAN D': 'https://www.aia-figc.it/designazioni/cand/',
+  'CAN 5 ELITE': 'https://www.aia-figc.it/designazioni/can5elite/',
+  'CAN 5': 'https://www.aia-figc.it/designazioni/can5/',
+  'CAN BS': 'https://www.aia-figc.it/designazioni/canbs/',
 }
 
 export default function UrlSelector({ onScrape, isLoading }) {
