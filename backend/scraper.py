@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-from urllib.parse import urljoin
+from urllib.parse import urljoin, urlparse
 from datetime import datetime
 from typing import Optional
 
@@ -41,6 +41,38 @@ def _extract_nome_sezione(cell) -> tuple[str, str]:
     return nome, sezione
 
 
+def _resolve_round_url(base_url: str, category_url: str, href: str) -> str:
+    """
+    Risolve l'href del girone contro category_url.
+    Se il risultato cade fuori dalla directory regionale di base_url,
+    forza il filename dentro quella directory (es. OTR con URL regionale).
+    """
+    resolved = urljoin(category_url, href)
+
+    parsed_base = urlparse(base_url)
+    # directory base: es. /designazioni/emiliaromagna/
+    base_path = parsed_base.path
+    if base_path.endswith('/'):
+        base_dir = base_path
+    else:
+        last_segment = base_path.rsplit('/', 1)[-1]
+        # Se l'ultimo segmento non ha estensione è una directory (es. "emiliaromagna")
+        if '.' not in last_segment:
+            base_dir = base_path + '/'
+        else:
+            base_dir = base_path.rsplit('/', 1)[0] + '/'
+
+    parsed_resolved = urlparse(resolved)
+    if not parsed_resolved.path.startswith(base_dir):
+        parsed_href = urlparse(href)
+        filename = parsed_href.path.rsplit('/', 1)[-1]
+        query = parsed_href.query or parsed_resolved.query
+        fixed_path = base_dir + filename
+        resolved = parsed_base._replace(path=fixed_path, query=query, fragment='').geturl()
+
+    return resolved
+
+
 def _get_date_from_title(title_text: str) -> Optional[str]:
     if not title_text:
         return None
@@ -61,6 +93,12 @@ def scrape(base_url: str, sezione: str = "Faenza") -> dict:
     results = []
     errors = []
     session = _make_session()
+
+    # Normalizza: se l'ultimo segmento non ha estensione è una directory → aggiungi /
+    parsed_tmp = urlparse(base_url)
+    last_seg = parsed_tmp.path.rstrip('/').rsplit('/', 1)[-1]
+    if '.' not in last_seg and not base_url.endswith('/'):
+        base_url = base_url + '/'
 
     try:
         main_content = _fetch_url(session, base_url)
@@ -106,7 +144,7 @@ def scrape(base_url: str, sezione: str = "Faenza") -> dict:
             continue
 
         for ga in group_anchors:
-            round_url = urljoin(url_cat, ga['href'])
+            round_url = _resolve_round_url(base_url, url_cat, ga['href'])
             try:
                 round_content = _fetch_url(session, round_url)
             except Exception as e:
