@@ -96,7 +96,6 @@ export default function App() {
           <span className="text-2xl">⚽</span>
           <div>
             <h1 className="text-xl font-bold text-gray-900">Designazioni Viewer</h1>
-            <p className="text-xs text-gray-400">Sezione Faenza — AIA-FIGC</p>
           </div>
         </div>
       </header>
