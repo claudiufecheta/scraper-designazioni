@@ -94,6 +94,12 @@ def scrape(base_url: str, sezione: str = "Faenza") -> dict:
     errors = []
     session = _make_session()
 
+    # Normalizza: se l'ultimo segmento non ha estensione è una directory → aggiungi /
+    parsed_tmp = urlparse(base_url)
+    last_seg = parsed_tmp.path.rstrip('/').rsplit('/', 1)[-1]
+    if '.' not in last_seg and not base_url.endswith('/'):
+        base_url = base_url + '/'
+
     try:
         main_content = _fetch_url(session, base_url)
     except Exception as e:

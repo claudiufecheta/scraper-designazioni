@@ -4,16 +4,17 @@ import { REGIONI } from '../data/regioni'
 const DEFAULT_REGIONE = REGIONI.find((r) => r.nome === 'Emilia Romagna')
 const DEFAULT_SEZIONE = DEFAULT_REGIONE.sezioni.find((s) => s.nome === 'Faenza')
 
-const TIPI = [
-  { label: 'OTS', url: null },
-  { label: 'CAN C', url: 'https://www.aia-figc.it/designazioni/canc/' },
-  { label: 'CAN D', url: 'https://www.aia-figc.it/designazioni/cand/' },
-]
+const TIPI_FISSI = {
+  OTS: null,          // usa sezione.url
+  OTR: 'regione',    // usa regione.url
+  'CAN C': 'https://www.aia-figc.it/designazioni/canc/',
+  'CAN D': 'https://www.aia-figc.it/designazioni/cand/',
+}
 
 export default function UrlSelector({ onScrape, isLoading }) {
   const [regione, setRegione] = useState(DEFAULT_REGIONE)
   const [sezione, setSezione] = useState(DEFAULT_SEZIONE)
-  const [tipo, setTipo] = useState(TIPI[0])
+  const [tipo, setTipo] = useState('OTS')
 
   function handleRegioneChange(e) {
     const nuovaRegione = REGIONI.find((r) => r.nome === e.target.value)
@@ -27,7 +28,9 @@ export default function UrlSelector({ onScrape, isLoading }) {
 
   function handleSubmit(e) {
     e.preventDefault()
-    const url = tipo.url ?? sezione.url
+    const tipoUrl = TIPI_FISSI[tipo]
+    const url = tipoUrl === null ? sezione.url : tipoUrl === 'regione' ? regione.url : tipoUrl
+    console.log(`[${tipo}] base_url:`, url)
     onScrape(url, sezione.nome)
   }
 
@@ -68,18 +71,18 @@ export default function UrlSelector({ onScrape, isLoading }) {
       <div className="flex flex-col gap-1">
         <label className="text-xs font-medium text-gray-500 uppercase tracking-wide">Tipo ricerca</label>
         <div className="flex gap-2">
-          {TIPI.map((t) => (
+          {Object.keys(TIPI_FISSI).map((label) => (
             <button
-              key={t.label}
+              key={label}
               type="button"
-              onClick={() => setTipo(t)}
+              onClick={() => setTipo(label)}
               className={`px-4 py-1.5 rounded-lg text-sm font-medium transition-colors ${
-                tipo.label === t.label
+                tipo === label
                   ? 'bg-blue-600 text-white'
                   : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
               }`}
             >
-              {t.label}
+              {label}
             </button>
           ))}
         </div>
