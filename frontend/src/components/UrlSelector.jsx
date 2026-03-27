@@ -73,7 +73,7 @@ export default function UrlSelector({ onScrape, isLoading }) {
       {/* Tipo ricerca */}
       <div className="flex flex-col gap-1">
         <label className="text-xs font-medium text-gray-500 uppercase tracking-wide">Tipo ricerca</label>
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           {Object.keys(TIPI_FISSI).map((label) => (
             <button
               key={label}
