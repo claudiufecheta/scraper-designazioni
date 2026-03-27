@@ -1,6 +1,7 @@
 export const REGIONI = [
   {
     nome: 'Abruzzo',
+    url: 'https://www.aia-figc.it/designazioni/abruzzo',
     sezioni: [
       { nome: 'Avezzano', url: 'https://www.aia-figc.it/designazioni/abruzzo/Default.asp?gare=12-3' },
       { nome: 'Chieti', url: 'https://www.aia-figc.it/designazioni/abruzzo/Default.asp?gare=12-6' },
@@ -14,6 +15,7 @@ export const REGIONI = [
   },
   {
     nome: 'Basilicata',
+    url: 'https://www.aia-figc.it/designazioni/basilicata',
     sezioni: [
       { nome: 'Matera', url: 'https://www.aia-figc.it/designazioni/basilicata/Default.asp?gare=16-321' },
       { nome: 'Moliterno', url: 'https://www.aia-figc.it/designazioni/basilicata/Default.asp?gare=16-324' },
@@ -24,6 +26,7 @@ export const REGIONI = [
   },
   {
     nome: 'Bolzano (CPA)',
+    url: 'https://www.aia-figc.it/designazioni/cpabolzano',
     sezioni: [
       { nome: 'Bolzano', url: 'https://www.aia-figc.it/designazioni/cpabolzano/Default.asp?gare=20-528' },
       { nome: 'Merano', url: 'https://www.aia-figc.it/designazioni/cpabolzano/Default.asp?gare=20-531' },
@@ -31,6 +34,7 @@ export const REGIONI = [
   },
   {
     nome: 'Calabria',
+    url: 'https://www.aia-figc.it/designazioni/calabria',
     sezioni: [
       { nome: 'Catanzaro', url: 'https://www.aia-figc.it/designazioni/calabria/Default.asp?gare=17-27' },
       { nome: 'Cosenza', url: 'https://www.aia-figc.it/designazioni/calabria/Default.asp?gare=17-30' },
@@ -47,6 +51,7 @@ export const REGIONI = [
   },
   {
     nome: 'Campania',
+    url: 'https://www.aia-figc.it/designazioni/campania',
     sezioni: [
       { nome: 'Agropoli', url: 'https://www.aia-figc.it/designazioni/campania/Default.asp?gare=14-60' },
       { nome: 'Ariano Irpino', url: 'https://www.aia-figc.it/designazioni/campania/Default.asp?gare=14-62' },
@@ -69,6 +74,7 @@ export const REGIONI = [
   },
   {
     nome: 'Emilia Romagna',
+    url: 'https://www.aia-figc.it/designazioni/emiliaromagna',
     sezioni: [
       { nome: 'Bologna', url: 'https://www.aia-figc.it/designazioni/emiliaromagna/Default.asp?gare=4-111' },
       { nome: 'Cesena', url: 'https://www.aia-figc.it/designazioni/emiliaromagna/Default.asp?gare=4-114' },
@@ -88,6 +94,7 @@ export const REGIONI = [
   },
   {
     nome: 'Friuli Venezia Giulia',
+    url: 'https://www.aia-figc.it/designazioni/friuli',
     sezioni: [
       { nome: 'Basso Friuli', url: 'https://www.aia-figc.it/designazioni/friuli/Default.asp?gare=7-152' },
       { nome: "Gradisca d'Isonzo", url: 'https://www.aia-figc.it/designazioni/friuli/Default.asp?gare=7-160' },
@@ -100,6 +107,7 @@ export const REGIONI = [
   },
   {
     nome: 'Lazio',
+    url: 'https://www.aia-figc.it/designazioni/lazio',
     sezioni: [
       { nome: 'Albano Laziale', url: 'https://www.aia-figc.it/designazioni/lazio/Default.asp?gare=11-181' },
       { nome: 'Aprilia', url: 'https://www.aia-figc.it/designazioni/lazio/Default.asp?gare=11-182' },
@@ -119,6 +127,7 @@ export const REGIONI = [
   },
   {
     nome: 'Liguria',
+    url: 'https://www.aia-figc.it/designazioni/liguria',
     sezioni: [
       { nome: 'Albenga', url: 'https://www.aia-figc.it/designazioni/liguria/Default.asp?gare=2-219' },
       { nome: 'Chiavari', url: 'https://www.aia-figc.it/designazioni/liguria/Default.asp?gare=2-222' },
@@ -131,6 +140,7 @@ export const REGIONI = [
   },
   {
     nome: 'Lombardia',
+    url: 'https://www.aia-figc.it/designazioni/lombardia',
     sezioni: [
       { nome: 'Abbiategrasso', url: 'https://www.aia-figc.it/designazioni/lombardia/Default.asp?gare=3-240' },
       { nome: 'Bergamo', url: 'https://www.aia-figc.it/designazioni/lombardia/Default.asp?gare=3-243' },
@@ -161,6 +171,7 @@ export const REGIONI = [
   },
   {
     nome: 'Marche',
+    url: 'https://www.aia-figc.it/designazioni/marche',
     sezioni: [
       { nome: 'Ancona', url: 'https://www.aia-figc.it/designazioni/marche/Default.asp?gare=10-330' },
       { nome: 'Ascoli Piceno', url: 'https://www.aia-figc.it/designazioni/marche/Default.asp?gare=10-333' },
@@ -173,6 +184,7 @@ export const REGIONI = [
   },
   {
     nome: 'Molise',
+    url: 'https://www.aia-figc.it/designazioni/molise',
     sezioni: [
       { nome: 'Campobasso', url: 'https://www.aia-figc.it/designazioni/molise/Default.asp?gare=13-72' },
       { nome: 'Isernia', url: 'https://www.aia-figc.it/designazioni/molise/Default.asp?gare=13-87' },
@@ -181,6 +193,7 @@ export const REGIONI = [
   },
   {
     nome: "Piemonte Valle d'Aosta",
+    url: 'https://www.aia-figc.it/designazioni/piemonte',
     sezioni: [
       { nome: 'Alba - Bra', url: 'https://www.aia-figc.it/designazioni/piemonte/Default.asp?gare=1-363' },
       { nome: 'Alessandria', url: 'https://www.aia-figc.it/designazioni/piemonte/Default.asp?gare=1-351' },
@@ -202,6 +215,7 @@ export const REGIONI = [
   },
   {
     nome: 'Puglia',
+    url: 'https://www.aia-figc.it/designazioni/puglia',
     sezioni: [
       { nome: 'Bari', url: 'https://www.aia-figc.it/designazioni/puglia/Default.asp?gare=15-402' },
       { nome: 'Barletta', url: 'https://www.aia-figc.it/designazioni/puglia/Default.asp?gare=15-405' },
@@ -215,6 +229,7 @@ export const REGIONI = [
   },
   {
     nome: 'Sardegna',
+    url: 'https://www.aia-figc.it/designazioni/sardegna',
     sezioni: [
       { nome: 'Alghero', url: 'https://www.aia-figc.it/designazioni/sardegna/Default.asp?gare=19-426' },
       { nome: 'Cagliari', url: 'https://www.aia-figc.it/designazioni/sardegna/Default.asp?gare=19-429' },
@@ -229,6 +244,7 @@ export const REGIONI = [
   },
   {
     nome: 'Sicilia',
+    url: 'https://www.aia-figc.it/designazioni/sicilia',
     sezioni: [
       { nome: 'Acireale', url: 'https://www.aia-figc.it/designazioni/sicilia/Default.asp?gare=18-447' },
       { nome: 'Agrigento', url: 'https://www.aia-figc.it/designazioni/sicilia/Default.asp?gare=18-450' },
@@ -246,6 +262,7 @@ export const REGIONI = [
   },
   {
     nome: 'Toscana',
+    url: 'https://www.aia-figc.it/designazioni/toscana',
     sezioni: [
       { nome: 'Arezzo', url: 'https://www.aia-figc.it/designazioni/toscana/Default.asp?gare=8-483' },
       { nome: 'Carrara', url: 'https://www.aia-figc.it/designazioni/toscana/Default.asp?gare=8-486' },
@@ -266,6 +283,7 @@ export const REGIONI = [
   },
   {
     nome: 'Trento (CPA)',
+    url: 'https://www.aia-figc.it/designazioni/cpatrento',
     sezioni: [
       { nome: 'Arco Riva', url: 'https://www.aia-figc.it/designazioni/cpatrento/Default.asp?gare=21-525' },
       { nome: 'Rovereto', url: 'https://www.aia-figc.it/designazioni/cpatrento/Default.asp?gare=21-534' },
@@ -274,6 +292,7 @@ export const REGIONI = [
   },
   {
     nome: 'Umbria',
+    url: 'https://www.aia-figc.it/designazioni/umbria',
     sezioni: [
       { nome: 'Città di Castello', url: 'https://www.aia-figc.it/designazioni/umbria/Default.asp?gare=9-540' },
       { nome: 'Foligno', url: 'https://www.aia-figc.it/designazioni/umbria/Default.asp?gare=9-543' },
@@ -285,6 +304,7 @@ export const REGIONI = [
   },
   {
     nome: 'Veneto',
+    url: 'https://www.aia-figc.it/designazioni/veneto',
     sezioni: [
       { nome: 'Bassano del Grappa', url: 'https://www.aia-figc.it/designazioni/veneto/Default.asp?gare=5-561' },
       { nome: 'Belluno', url: 'https://www.aia-figc.it/designazioni/veneto/Default.asp?gare=5-564' },
