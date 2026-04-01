@@ -1,4 +1,4 @@
-const API_BASE = import.meta.env.VITE_API_BASE ?? 'https://designazioni-api.onrender.com'
+const API_BASE = import.meta.env.VITE_API_BASE
 
 /**
  * Lancia lo scraping sul backend.
