@@ -122,13 +122,18 @@ In un secondo terminale:
 
 ```bash
 cd frontend
+cp .env.example .env.local        # crea il file delle variabili d'ambiente
+# modifica .env.local e imposta VITE_API_BASE con l'URL del tuo backend
 npm install
 npm run dev
 ```
 
 Il frontend sarà disponibile su `http://localhost:5173`.
 
-> **Nota**: il frontend in sviluppo locale punta al backend su `http://localhost:8000` (default hardcoded). Nessuna variabile d'ambiente necessaria per l'uso locale.
+Per lo sviluppo locale imposta:
+```
+VITE_API_BASE=http://localhost:8000
+```
 
 ---
 
